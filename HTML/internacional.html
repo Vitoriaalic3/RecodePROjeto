@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Alice's Travel</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+
+        .bgnav{
+            background-color: black;
+        }
+        .bgmain{
+            background-color: rgb(104, 178, 218);  
+        }
+
+        .divbg{
+         
+            background-color: rgb(237, 228, 160);
+            align-items: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+            
+            height: 250px;  
+            
+        }
+
+        .pp{ justify-content: space-between;}
+
+        h3{
+          text-align: center;
+          margin-top: 3px;
+        }
+
+
+ 
+      /* Card */
+        .card {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+        transition: 0.3s;
+        
+        
+      }
+      .card-body {
+        
+        padding: 15px;
+        text-align:justify;
+        font-family: sans-serif;
+        
+        
+      }
+
+      .card-title{
+        height: 90px;
+        
+      }
+
+      .card-text{
+        height: 200px;
+        /* border:1px solid black; */
+        margin-bottom: 10px;
+      }
+
+      .card-text1{
+        height: 120px;
+        /* border:1px solid black; */
+        margin-bottom: 10px;
+      }
+
+      .card:hover {
+        
+        background-color: rgb(241, 238, 217);}
+
+
+
+
+
+      /* Card Footer */
+      .card-footer {
+        
+        
+        text-align: center;
+        background-color: #d19e1eef;
+        /* border: 1px solid black; */
+        
+      
+      }
+
+
+
+      .card-footer a {
+        color: #fff;
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-weight: 600;
+        
+        
+      }
+
+
+      
+
+
+       
+      
+        
+    </style>
+  </head>
+  <body class="bgmain">
+                  <!-- Inicio Nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bgnav ">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="Imagens/logo solo.jpg" alt="" width="70" height="40"> </a>
+       
+        <a class="navbar-brand" href="home.html">Alice's Travel</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="destino.html">Destino</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="promocoes.html">Promoções</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contato.html">Contato</a>
+        </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mais</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="disney.html">Disney</a>
+                <a class="dropdown-item" href="cruzeiros.html">Cruzeiros</a>
+                <a class="dropdown-item" href="segviagem.html">Seguro Viagem</a>
+              </div>
+          </li>
+      </ul>
+            </li>
+           
+          </ul>
+          <ul class="nav navbar-nav navbar-right mx-3">
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   
+                  
+                              <img
+                              src="Imagens/account.png"
+                              class="rounded-circle"
+                              height="30"
+                              alt=""
+                              loading="lazy"
+                            />  Profile  </a>
+                          <div class="dropdown-menu" aria-labelledby="dropdownId">
+                             
+                            <a class="dropdown-item" href="login.html">Login</a>
+                            <a class="dropdown-item" href="signin.html">Sign in</a>
+                            
+                          </div>
+                      </li>
+                   
+                  </ul>
+                </li>
+               
+                  </ul>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Fim Nav -->
+
+        <!-- Corpo -->
+        <div class="container">
+            <!-- Inicio descrição -->
+            <div class="row divbg p-4">
+            <div class="col"> <h2> Viaje conosco por preços imperdíveis </h2></div> 
+
+            <!-- Local de origem e destino -->
+                <div class="row">
+                  <div class="col">
+                    <label for="formGroupExampleInput" class="form-label">Local de origem</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Local de origem">
+                  </div>
+                  <div class="col mb">
+                    <label for="formGroupExampleInput2" class="form-label">Local de destino</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Local de destino">
+                  </div>
+                </div>
+                <!-- Fim local de origem e destino -->
+
+                <!-- Inicio datas -->
+                <div class="row">
+                  <table>
+                  <div class="col mb-3">
+                    <form>
+                      <div>
+                        <tr>
+                          <td><label for="dia1">Data de ida:</label>
+                        <input type="date" id="dia1" name="dia1"></td>
+                      </div>
+                  </div>
+                  
+                  <div class="col mb-3">
+                    
+                      <div>
+                        <td><label for="dia2">Data de volta: </label>
+                        <input type="date" id="dia2" name="dia2">
+                         <button type="submit" class="btn btn-dark">Buscar</button></td></tr>
+                      </div>
+
+                    </form>
+                  </table>
+
+                  
+                </div>
+                <!-- Fim datas -->
+                
+               </div>
+              <!-- fim divbg-->
+            
+            
+            <!-- Fim descrição -->
+            
+
+            <!-- Inicio do conteúdo -->
+            <div class="row mt-3 mb-5 pp">
+            <div class="col-12-col-md-3 mb-2"> <h3> Alguns pacotes e viagens internacionais disponíveis: </h3></div>
+            </div>
+                <!-- Inicio Cards -->
+                <div class="row mt-3 mb-5 pp">
+                  <!-- Inicio Card 1 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Veneza, Itália (Pacote) </h5>
+                      <p class="card-text">- 7 diárias <br>✔ Quarto <br>✔ Café da manhã <br>✔ Passagem Aérea <br><br> • A partir de R$9.300,00
+                        
+                      </p>
+                      </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card1 -->
+
+                  <!-- Inicio Card2 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                   
+                    <div class="card-body">
+                      <h5 class="card-title">Pequim, China (Pacote) </h5>
+                      <p class="card-text">- 3 ou 5 diárias <br>✔ Quarto <br>✔ Café da manhã <br>✔ Passagem Aérea <br><br> • A partir de R$15.300,00
+                        
+                      </p>
+                      </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card2 -->
+
+                  <!-- Inicio Card3 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Machu Picchu (Pacote)</h5>
+                      <p class="card-text">- 5 diárias  <br>✔ Quarto <br>✔ Café da manhã <br>✔ Passagem Aérea <br><br> • A partir de R$2.500,00
+                        
+                      </p>
+                    </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card3 --> 
+                                  
+                </div>
+                <!-- Fim Cards -->
+
+                <!-- Inicio 2Cards -->
+                <div class="row mt-3 mb-5 pp">
+                  <!-- Inicio Card 1 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Vancouver, Canadá </h5>
+                      <p class="card-text">✔ Passagem Aérea <br><br> • A partir de R$6.100,00
+                        
+                      </p>
+                      </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card1 -->
+
+                  <!-- Inicio Card2 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                   
+                    <div class="card-body">
+                      <h5 class="card-title">Tokyo, Japão </h5>
+                      <p class="card-text">✔ Passagem Aérea <br><br> • A partir de R$5.200,00
+                        
+                      </p>
+                      </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card2 -->
+
+                  <!-- Inicio Card3 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Sidney, Australia</h5>
+                      <p class="card-text">✔ Passagem Aérea <br><br> • A partir de R$11.250,00
+                        
+                      </p>
+                    </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card3 --> 
+                                  
+                </div>
+                <!-- Fim 2Cards -->
+
+                <!-- Inicio Cards -->
+                <div class="row mt-3 mb-5 pp">
+                  <!-- Inicio Card 1 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                   
+                    <div class="card-body">
+                      <h5 class="card-title">Londres, Inglaterra </h5>
+                      <p class="card-text1">✔ Passagem Aérea ida e volta <br><br> • A partir de R$5.200,00
+                        
+                      </p>
+                      </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card1 -->
+
+                  <!-- Inicio Card2 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Dublin, Irlanda </h5>
+                      <p class="card-text1">✔ Passagem Aérea ida e volta <br><br> • A partir de R$5.300,00
+                        
+                      </p>
+                      </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card2 -->
+
+                  <!-- Inicio Card3 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Lisboa, Portugal</h5>
+                      <p class="card-text1">✔ Passagem Aérea ida e volta <br><br> • A partir de R$3.200,00
+                        
+                      </p>
+                    </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card3 --> 
+                                  
+                </div>
+                <!-- Fim 3Cards -->
+
+                <!-- Inicio 4Cards -->
+                <div class="row mt-3 mb-5 pp">
+                  <!-- Inicio Card 1 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Seul, Coréia </h5>
+                      <p class="card-text1">✔ Passagem Aérea ida e volta <br><br> • A partir de R$10.000,00
+                        
+                      </p>
+                      </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card1 -->
+
+                  <!-- Inicio Card2 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                   
+                    <div class="card-body">
+                      <h5 class="card-title">Santiago, Chile </h5>
+                      <p class="card-text1">✔ Passagem Aérea ida e volta <br><br> • A partir de R$1.300,00
+                        
+                      </p>
+                      </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card2 -->
+
+                  <!-- Inicio Card3 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Buenos Aires, Argentina</h5>
+                      <p class="card-text1">✔ Passagem Aérea ida e volta <br><br> • A partir de R$1.100,00
+                        
+                      </p>
+                    </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card3 --> 
+                                  
+                </div>
+                <!-- Fim 4Cards -->
+
+                <!-- Inicio 5Cards -->
+                <div class="row mt-3 mb-5 pp">
+                  <!-- Inicio Card 1 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Bangkok, Tailândia  </h5>
+                      <p class="card-text1">✔ Passagem Aérea ida e volta <br><br> • A partir de R$10.000,00
+                        
+                      </p>
+                      </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card1 -->
+
+                  <!-- Inicio Card2 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Cairo, Egito </h5>
+                      <p class="card-text1">✔ Passagem Aérea ida e volta <br><br> • A partir de R$6.800,00
+                        
+                      </p>
+                      </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card2 -->
+
+                  <!-- Inicio Card3 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Bogotá, Colômbia</h5>
+                      <p class="card-text1">✔ Passagem Aérea ida e volta <br><br> • A partir de R$2.250,00
+                        
+                      </p>
+                    </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card3 --> 
+                                  
+                </div>
+                <!-- Fim 5Cards -->
+
+                <!-- Inicio 6Cards -->
+                <div class="row mt-3 mb-5 pp">
+                  <!-- Inicio Card 1 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Oslo, Noruega </h5>
+                      <p class="card-text1">✔ Passagem Aérea ida e volta <br><br> • A partir de R$5.400,00
+                        
+                      </p>
+                      </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card1 -->
+
+                  <!-- Inicio Card2 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Atenas, Grécia </h5>
+                      <p class="card-text1">✔ Passagem Aérea ida e volta <br><br> • A partir de R$5.3500,00
+                        
+                      </p>
+                      </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card2 -->
+
+                  <!-- Inicio Card3 -->
+                  <div class="col-md-3 card p-0 m-1 ">
+                   
+                    <div class="card-body">
+                      <h5 class="card-title">Havana, Cuba</h5>
+                      <p class="card-text1">✔ Passagem Aérea ida e volta <br><br> • A partir de R$2.950,00
+                        
+                      </p>
+                    </div>
+                      <div class="card-footer ">
+                      <a href="login.html">Saiba mais</a></div>
+                    
+                  </div>
+                  <!-- Fim Card3 --> 
+                                  
+                </div>
+                <!-- Fim Cards -->
+
+
+                <div style="text-align:right">
+                  <a> 
+                  <img src="imagens/logo.png"> </a>
+                
+              </div>
+        </div>
+
+      <!-- fim container -->
+
+    
+
+    
+    
+
+
+
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  </body>
+</html>
