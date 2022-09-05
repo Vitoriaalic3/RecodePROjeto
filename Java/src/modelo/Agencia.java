@@ -1,6 +1,7 @@
 package modelo;
 
 public class Agencia {
+	
  //atributos
 	private String Nome;
 	private int id;

@@ -2,9 +2,7 @@ package Conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 
 public class ConnectionFactory {
 	
@@ -22,7 +20,7 @@ public class ConnectionFactory {
 	    
 	    public static Connection creatConnectiontoMySQL() throws Exception {
 	        // faz com que a classe seja carregada pela JVM
-	        Class.forName("com.mysql.jdbc.Driver");
+	        Class.forName("com.mysql.cj.jdbc.Driver");
 	        
 	        // Cria a conexão com o banco de dados
 	        Connection connection = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
