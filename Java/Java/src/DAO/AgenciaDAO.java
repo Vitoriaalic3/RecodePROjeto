@@ -80,6 +80,7 @@ import modelo.Agencia;
 			}
 		}
 		
+	//D
 		public void deleteByIdAgencia(int IdAgencia) {
 			String sql="DELETE FROM agencia WHERE IdAgencia=?";
 			Connection conn=null;
