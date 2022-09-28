@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-C:\Users\Vitoria Alice\Desktop\JEE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2317869974.index
-\MVC\src\main\java
