@@ -30,9 +30,9 @@ CREATE TABLE ItemPedido(
 IdViagem INT (20)  NOT NULL auto_increment,
 itens INT,
 decricao VARCHAR(100),
-IdPedido INT(10),
 
-FOREIGN KEY (IdPedido) REFERENCES pedido (IdPedido),
+
+
 FOREIGN KEY (IdViagem) REFERENCES viagem (IdViagem)
 );
 
