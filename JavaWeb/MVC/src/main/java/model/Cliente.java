@@ -1,3 +1,4 @@
+package model;
 
 public class Cliente {
 	private String nome, email, cpf, cep, endereco;
