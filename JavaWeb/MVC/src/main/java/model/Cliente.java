@@ -7,7 +7,7 @@ public class Cliente {
 	
 	
 	public Cliente(String nome, String email, String endereco, String usuario, String senha, int id) {
-		super();
+		
 		this.nome = nome;
 		this.email = email;
 		this.endereco = endereco;
