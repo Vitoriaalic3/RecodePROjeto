@@ -37,7 +37,7 @@ public class AlterarClienteServlet extends HttpServlet {
 		clienteAlterado.setEmail(req.getParameter("email"));
 		clienteAlterado.setEndereco(req.getParameter("endereco"));
 		clienteAlterado.setUsuario(req.getParameter("usuario"));
-		clienteAlterado.setSenha(req.getParameter("email"));
+		clienteAlterado.setSenha(req.getParameter("senha"));
 		clienteAlterado.setId(Integer.parseInt(req.getParameter("id")));
 		
 		ClienteDAO cd = new ClienteDAO();

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
-	
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jstl"%>
 	
 <!DOCTYPE html>
 <html>
@@ -60,13 +60,13 @@
 		<thead>
 			<tr>
 				<th>Nome</th>
-				<th>Id</th>
+				<th>ID</th>
 			
 				<th>Ações</th>
 			</tr>
 		</thead>
 		<tbody>
-			<jstl:forEach items="${listaClientes}" var="cliente">
+			<jstl:forEach items="${listaCliente}" var="cliente">
 				<tr>
 					<td>${cliente.nome}</td>
 					<td>${cliente.id}</td>
@@ -74,7 +74,8 @@
 					
 					
 					<td>
-						<a href="editar?id=${cliente.id}" class="btn btn-success">Editar</a>  
+						<a href="editar?id=${cliente.id}" class="btn btn-success">Editar</a> 
+				
 						<a href="excluir?id=${cliente.id}" onclick="return confirm('Deseja Excluir?')" class="btn btn-danger">Excluir</a>
 					</td>
 				</tr>

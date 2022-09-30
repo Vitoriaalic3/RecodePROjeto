@@ -12,8 +12,13 @@ package model;
 	import java.util.List;
 
 
-		//C
+		
 		public class ClienteDAO {
+			
+			Connection conn = null;
+			PreparedStatement pstm = null;
+		
+			//C
 			public void save(Cliente cliente) {
 				String sql="INSERT INTO Cliente(NomeCliente, EmailCliente , UsuarioCliente, SenhaCliente,EnderecoCliente )" + 
 			"VALUES (?,?,?,?,?)";
@@ -53,36 +58,50 @@ package model;
 		
 		//U
 			public void update(Cliente cliente) {
-				String sql="UPDATE cliente SET NomeCliente =?, EnderecoCliente=?, UsuarioCliente=?, SenhaCliente=?, EmailCliente=?"+
-			"WHERE IdCliente=?";
-				
-				Connection conn=null;
-				PreparedStatement pstm=null;
+
+				String sql = "UPDATE cliente SET NomeCliente = ?, EmailCliente = ?, UsuarioCliente = ?, SenhaCliente=?, EnderecoCliente=? "
+				+ " WHERE IdCliente = ?";
+
 				try {
-					conn=Conexao.creatConnectiontoMySQL();
+					// Cria uma conexão com o banco
+					conn = Conexao.creatConnectiontoMySQL();
+
+					// Cria um PreparedStatment, classe usada para executar a query
 					pstm=(PreparedStatement) conn.prepareStatement(sql);
-					
+
+					// Adiciona o valor do primeiro parâmetro da sql
 					pstm.setString(1, cliente.getNome());
-					pstm.setString(2, cliente.getEndereco());
+					// Adicionar o valor do segundo parâmetro da sql
+					pstm.setString(2, cliente.getEmail());
+					// Adiciona o valor do terceiro parâmetro da sql
 					pstm.setString(3, cliente.getUsuario());
 					pstm.setString(4, cliente.getSenha());
-					pstm.setString(5, cliente.getEmail());
-					
+					pstm.setString(5, cliente.getEndereco());
+
 					pstm.setInt(6, cliente.getId());
-					
+
+					// Executa a sql para inserção dos dados
 					pstm.execute();
-					
-				}catch(Exception e) {
+
+				} catch (Exception e) {
+
 					e.printStackTrace();
-				}finally {
+				} finally {
+
+					// Fecha as conexões
+
 					try {
-						if(pstm!=null) {
+						if (pstm != null) {
+
 							pstm.close();
 						}
-						if(conn!=null) {
+
+						if (conn != null) {
 							conn.close();
 						}
-					} catch(Exception e) {
+
+					} catch (Exception e) {
+
 						e.printStackTrace();
 					}
 				}
@@ -169,18 +188,19 @@ package model;
 			}
 		
 		
-		public Cliente getClienteById(int id) {
+		public Cliente getClienteById(int IdCliente) {
 
-			String sql = "SELECT * FROM cliente where id = ?";
+			String sql = "SELECT * FROM cliente WHERE IdCliente=?";
+			
 			Cliente cliente = new Cliente();
-			Connection conn=null;
+		
 			ResultSet rset = null;
-			PreparedStatement pstm=null;
+			
 
 			try {
 				conn = Conexao.creatConnectiontoMySQL();
 				pstm = conn.prepareStatement(sql);
-				pstm.setInt(1, id);
+				pstm.setInt(1, IdCliente);
 				rset = pstm.executeQuery();
 
 				rset.next();

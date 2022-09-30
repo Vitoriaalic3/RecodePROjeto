@@ -16,6 +16,7 @@ import model.ClienteDAO;
 
 @WebServlet("/home")
 public class ListaClienteServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
 
 	@Override
@@ -23,10 +24,12 @@ public class ListaClienteServlet extends HttpServlet {
 		List<Cliente> banco = new ArrayList<Cliente>();
 		ClienteDAO cdao = new ClienteDAO();		
 		banco = cdao.getCliente();		
-		req.setAttribute("listaClientes", banco);
+		req.setAttribute("listaCliente", banco);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("salvarcliente.jsp");
 		dispatcher.forward(req, resp);
+		
+		
 	}
 
 }
