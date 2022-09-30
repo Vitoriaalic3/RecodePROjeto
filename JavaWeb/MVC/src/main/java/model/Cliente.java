@@ -1,8 +1,45 @@
 package model;
 
 public class Cliente {
-	private String nome, email, cpf, cep, endereco;
+	private String nome, email, endereco,usuario, senha;
+	private int id;
 	
+	
+	
+	public Cliente(String nome, String email, String endereco, String usuario, String senha, int id) {
+		super();
+		this.nome = nome;
+		this.email = email;
+		this.endereco = endereco;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.id = id;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 	public Cliente() {
 	}
 
@@ -22,21 +59,6 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public String getCep() {
-		return cep;
-	}
-
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
 
 	public String getEndereco() {
 		return endereco;

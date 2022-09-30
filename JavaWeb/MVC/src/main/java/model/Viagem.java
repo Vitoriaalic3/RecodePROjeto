@@ -3,7 +3,8 @@ package model;
 public class Viagem {
  private String destino, data, hora;
  private int id;
-public Viagem() {
+ 
+ public Viagem() {
 
 }
 public String getDestino() {
