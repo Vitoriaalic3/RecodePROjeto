@@ -67,7 +67,7 @@ package model;
 					conn = Conexao.creatConnectiontoMySQL();
 
 					// Cria um PreparedStatment, classe usada para executar a query
-					pstm=(PreparedStatement) conn.prepareStatement(sql);
+					pstm = conn.prepareStatement(sql);
 
 					// Adiciona o valor do primeiro parâmetro da sql
 					pstm.setString(1, cliente.getNome());
@@ -79,7 +79,7 @@ package model;
 					pstm.setString(5, cliente.getEndereco());
 
 					pstm.setInt(6, cliente.getId());
-
+					
 					// Executa a sql para inserção dos dados
 					pstm.execute();
 
@@ -155,7 +155,8 @@ package model;
 					Cliente cliente=new Cliente();
 					
 					cliente.setId(rset.getInt("IdCliente"));
-					cliente.setNome(rset.getString("NomeCliente"));
+					cliente.setNome(rset.getString("NomeCliente")); 				
+
 					cliente.setEndereco(rset.getString("EnderecoCliente"));
 					cliente.setUsuario(rset.getString("UsuarioCliente"));
 					cliente.setSenha(rset.getString("SenhaCliente"));
@@ -201,16 +202,22 @@ package model;
 				conn = Conexao.creatConnectiontoMySQL();
 				pstm = conn.prepareStatement(sql);
 				pstm.setInt(1, IdCliente);
+				
+				
 				rset = pstm.executeQuery();
-
+				
+				
+				
 				rset.next();
+				
+				
+				cliente.setId(rset.getInt("IdCliente"));
+				cliente.setNome(rset.getString("NomeCliente")); 				
 
-				cliente.setNome(rset.getString("nome"));
-				cliente.setEmail(rset.getString("email"));
-				cliente.setUsuario(rset.getString("usuario"));
-				cliente.setSenha(rset.getString("senha"));
-				cliente.setEndereco(rset.getString("endereco"));
-				cliente.setId(rset.getInt("id"));
+				cliente.setEndereco(rset.getString("EnderecoCliente"));
+				cliente.setUsuario(rset.getString("UsuarioCliente"));
+				cliente.setSenha(rset.getString("SenhaCliente"));
+				cliente.setEmail(rset.getString("EmailCliente"));
 
 			} catch (Exception e) {
 				e.printStackTrace();

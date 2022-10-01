@@ -1,7 +1,7 @@
 package controller;
 
 import java.io.IOException;
-import java.util.Date;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,25 +15,37 @@ import model.ClienteDAO;
 
 @WebServlet("/editar")
 public class AlterarClienteServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	
+		
 		int idCliente = Integer.parseInt(req.getParameter("id"));
+	
+		
+		
 		ClienteDAO cdao = new ClienteDAO();
+		
+		
 		Cliente clienteSelecionado = cdao.getClienteById(idCliente);
-
+		
+		
+		
 		req.setAttribute("cliente", clienteSelecionado);
 	
 		RequestDispatcher rd = req.getRequestDispatcher("/alterarCliente.jsp");
 
         rd.forward(req, resp);
+        
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Cliente clienteAlterado = new Cliente();		
 		clienteAlterado.setNome(req.getParameter("nome"));
+		
 		clienteAlterado.setEmail(req.getParameter("email"));
 		clienteAlterado.setEndereco(req.getParameter("endereco"));
 		clienteAlterado.setUsuario(req.getParameter("usuario"));
@@ -44,6 +56,8 @@ public class AlterarClienteServlet extends HttpServlet {
 		cd.update(clienteAlterado);	
 		
 		resp.sendRedirect("home");
+		
+		
 	}
 
 }

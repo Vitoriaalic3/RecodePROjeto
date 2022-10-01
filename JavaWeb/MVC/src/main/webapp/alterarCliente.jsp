@@ -40,6 +40,14 @@
 			<p>
 				<input type="text" name="endereco" value="${cliente.endereco}">
 			</p>
+			<p>Email:</p>
+			<p>
+				<input type="text" name="email" value="${cliente.email}">
+			</p>
+			<p>Senha:</p>
+			<p>
+				<input type="text" name="senha" value="${cliente.senha}">
+			</p>
 			<button type="submit" class="btn btn-success">Atualizar</button>
 		</form>
 			</div>
