@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Salvando o Cliente jsp</title>
+<title>MVC Cliente</title>
 
 
 <link
@@ -29,26 +29,40 @@
 
 <legend>Dados do Cliente</legend>
 
-<p><label for="nome">Nome:</label>
+<table>
+<tr>
+<td>  <label for="nome">Nome:</label></td>
+<td> <input type="text"id="nome"name="nome">  </td>
+</tr>
 
-<input type="text"id="nome"name="nome"></p>
+<tr>
+<td><label for="email">Email:</label></td>
+<td><input type="text"id="email"name="email"></td>
+</tr>
 
-<p><label for="nome">Email:</label>
+<tr>
+<td><label for="usuario">Usuario:</label></td>
+<td><input type="text"id="usuario"name="usuario"></td>
+</tr>
 
-<input type="text"id="email"name="email"></p>
+<tr>
+<td><label for="senha">Senha:</label></td>
+<td><input type="password"id="senha"name="senha"></td>
+</tr>
 
-<p> <label for="cpf">Usuario:</label>
-<input type="text"id="usuario"name="usuario"></p>
-
-<p> <label for="cep">Senha:</label>
-<input type="password"id="senha"name="senha"></p>
-
-<p> <label for="endereco">Endereco:</label>
-<input type="text"id="endereco"name="endereco"></p>
-
+<tr>
+<td> <label for="endereco">Endereco:</label></td>
+<td><input type="text"id="endereco"name="endereco"></td>
+</tr>
 
 
-<p><input type="submit"value="Cadastrar">
+
+</table>
+<br><input type="submit"value="Cadastrar"> <br><br>
+
+
+
+<a href="http://localhost:8080/MVC/home" class="btn btn-primary">Clique aqui para ver a lista e realizar operacoes</a>
 </fieldset>
 
 </form>
@@ -72,6 +86,7 @@
 					<td>${cliente.id}</td>
 					
 					
+
 					
 					<td>
 						<a href="editar?id=${cliente.id}" class="btn btn-success">Editar</a> 
