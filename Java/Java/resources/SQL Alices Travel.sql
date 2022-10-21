@@ -34,11 +34,3 @@ Destino VARCHAR(100)
 );
 
 
-CREATE TABLE seguro(
-codigo INT(13) PRIMARY KEY NOT NULL auto_increment,
-NomeCliente VARCHAR(100) NOT NULL,
-IdCliente INT(12) NOT NULL auto_increment,
-periodo DATE NOT NULL,
-FOREIGN KEY (IdCliente) REFERENCES cliente (IdCliente),
-FOREIGN KEY (NomeCliente) REFERENCES cliente (NomeCliente)
-);
